@@ -1,0 +1,15 @@
+# Dépendances
+/vendor/
+
+# (lib PHP : on ne commit pas le lock)
+composer.lock
+
+# Environnements / IDE
+.env
+.env.local
+/.idea/
+/.vscode/
+
+# PHPUnit
+/.phpunit.result.cache
+/coverage/

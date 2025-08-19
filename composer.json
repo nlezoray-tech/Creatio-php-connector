@@ -1,0 +1,19 @@
+{
+  "name": "nlezoray/creatio-php-connector",
+  "description": "Creatio connector (OAuth/OData) for PHP.",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^7.4 || ^8.1",
+    "guzzlehttp/guzzle": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Nlezoray\\Creatio\\": "src/Creatio/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  }
+}
+
