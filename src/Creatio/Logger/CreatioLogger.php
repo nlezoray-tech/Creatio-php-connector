@@ -1,8 +1,8 @@
 <?php
 /**
  * CreatioLogger class file
- *
- * Logger simple pour l'écriture de logs dans le cadre de l'intégration Creatio
+ * 
+ * Simple logger for writing logs as part of Creatio integration
  *
  * PHP Version 7.4
  *

@@ -2,7 +2,7 @@
 /**
  * CreatioOAuthAdapter class file
  *
- * Classe d'adaptateur pour la communication avec Creatio via oAuth
+ * Adapter class for communication with Creatio via oAuth
  *
  * PHP Version 7.4
  *

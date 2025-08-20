@@ -1,20 +1,20 @@
 Creatio PHP Connector
 
-Connecteur PHP (Guzzle) pour Creatio avec deux modes d’accès :
-OAuth (récupération d’un token auprès de l’Identity Server puis appels OData avec Bearer),
-OData (accès direct à l’API OData de Creatio).
+PHP connector (Guzzle) for Creatio with two access modes:
+OAuth (retrieving a token from the Identity Server then making OData calls with Bearer),
+OData (direct access to Creatio's OData API).
 
 Installation
 composer require nlezoray/creatio-php-connector
 
-Fichiers à modifier
+Files to edit
 1) OAuth : src/Creatio/Adapter/CreatioOAuthAdapter.php
 2) OData : src/Creatio/Adapter/CreatioODataAdapter.php
 
 php examples/basic.php
 
 Licence
-MIT. Voir le fichier LICENSE.
+MIT. See the LICENSE file.
 
 Contributions
-Issues et PR bienvenues. Merci de ne pas inclure de secrets dans les exemples ou tests.
+Issues and PRs welcome. Please do not include secrets in examples or tests.

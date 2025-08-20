@@ -2,8 +2,8 @@
 /**
  * CreatioODataAdapter class file
  *
- * Classe d'adaptateur pour la communication avec Creatio via OData
- *
+ * Adapter class for communicating with Creatio via OData
+ * 
  * PHP Version 7.4
  *
  * @category Adapter

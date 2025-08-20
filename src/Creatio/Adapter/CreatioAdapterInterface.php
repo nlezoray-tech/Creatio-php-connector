@@ -2,7 +2,7 @@
 /**
  * CreatioAdapterInterface interface file
  *
- * Interface définissant les méthodes nécessaires à tout adaptateur Creatio
+ * Interface defining the methods needed by any Creatio adapter
  *
  * PHP Version 7.4
  *
@@ -17,13 +17,13 @@ namespace Nlezoray\Creatio\Adapter;
 interface CreatioAdapterInterface
 {
     /**
-     * Authentifie le connecteur (oData ou oAuth)
+     * Authenticates the connector (oData or oAuth)
      * @return bool|null true si OK, false ou null sinon
      */
     public function authentification(): ?bool;
 
     /**
-     * Envoie une requête GET à l'API Creatio
+     * Sends a GET request to the Creatio API
      *
      * @param string $collection
      * @param array $apiQuery
@@ -35,7 +35,7 @@ interface CreatioAdapterInterface
     public function get(string $collection, array $apiQuery, int $nbresult = 10000, $orderby = false, int $skip = 0);
 
     /**
-     * Envoie une requête POST à l'API Creatio
+     * Sends a POST request to the Creatio API
      *
      * @param string $collection
      * @param array $tabObject
@@ -44,7 +44,7 @@ interface CreatioAdapterInterface
     public function post(string $collection, array $tabObject);
 
     /**
-     * Envoie une requête PUT à l'API Creatio
+     * Sends a PUT request to the Creatio API
      *
      * @param string $collection
      * @param string $id
@@ -54,7 +54,7 @@ interface CreatioAdapterInterface
     public function put(string $collection, string $id, array $tabObject);
 
     /**
-     * Envoie une requête DELETE à l'API Creatio
+     * Sends a DELETE request to the Creatio API
      *
      * @param string $collection
      * @param string $id
@@ -63,7 +63,7 @@ interface CreatioAdapterInterface
     public function delete(string $collection, string $id);
 
     /**
-     * Retourne le token BPMCSRF (oData)
+     * Return the token BPMCSRF (oData)
      * @return string|false
      */
     public function getCookieToken();

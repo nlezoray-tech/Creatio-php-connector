@@ -16,9 +16,9 @@ namespace Nlezoray\Creatio;
 use Nlezoray\Creatio\Adapter\CreatioAdapterInterface;
 use Nlezoray\Creatio\Adapter\CreatioODataAdapter;
 use Nlezoray\Creatio\Adapter\CreatioOAuthAdapter;
-use Nlezoray\Creatio\Service\CreatioLibQuestionnaire;
+use Nlezoray\Creatio\Service\CreatioLib;
 
-class Creatio extends CreatioLibQuestionnaire
+class Creatio extends CreatioLib
 {
     /** @var CreatioAdapterInterface */
     protected $adapter;
@@ -44,12 +44,12 @@ class Creatio extends CreatioLibQuestionnaire
     }
 
     /**
-     * Méthodes de délégation vers l'adaptateur Creatio.
+     * Delegate methods to the Creatio adapter.
      *
-     * Ces méthodes permettent d'appeler directement les fonctionnalités principales
-     * de l'adaptateur (authentification, requêtes CRUD) depuis la classe instanciable `Creatio`.
-     * Cela permet de simplifier l'utilisation externe de l'adaptateur, sans exposer directement
-     * ses détails d'implémentation, tout en respectant l'interface `CreatioAdapterInterface`.
+     * These methods allow you to directly call the adapter's main
+     * functions (authentication, CRUD requests) from the instantiable `Creatio` class.
+     * This simplifies external use of the adapter without directly exposing
+     * its implementation details, while still respecting the `CreatioAdapterInterface` interface.
      */
     public function getAdapter(): CreatioAdapterInterface
     {
@@ -57,7 +57,7 @@ class Creatio extends CreatioLibQuestionnaire
     }
 
     /**
-     * Authentifie la session auprès de Creatio via l'adaptateur.
+     * Authenticates the session to Creatio via the adapter.
      */
     public function authentification(): ?bool
     {
@@ -65,7 +65,7 @@ class Creatio extends CreatioLibQuestionnaire
     }
 
     /**
-     * Exécute une requête GET sur la collection spécifiée, avec paramètres.
+     * Performs a GET request on the specified collection, with parameters.
      */
     public function get(string $collection, array $query, int $nbresult = 10000, $orderby = false, int $skip = 0)
     {
@@ -73,7 +73,7 @@ class Creatio extends CreatioLibQuestionnaire
     }
 
     /**
-     * Exécute une requête POST (création d'entité) sur la collection donnée.
+     * Performs a POST (entity creation) request on the given collection.
      */
     public function post(string $collection, array $tabObject)
     {
@@ -81,7 +81,7 @@ class Creatio extends CreatioLibQuestionnaire
     }
 
     /**
-     * Exécute une requête PUT (mise à jour) sur une entité identifiée par son ID.
+     * Performs a PUT (update) request on an entity identified by its ID.
      */
     public function put(string $collection, string $id, array $tabObject)
     {
@@ -89,7 +89,7 @@ class Creatio extends CreatioLibQuestionnaire
     }
 
     /**
-     * Exécute une requête DELETE pour supprimer une entité identifiée par son ID.
+     * Executes a DELETE query to delete an entity identified by its ID.
      */    
     public function delete(string $collection, string $id)
     {
