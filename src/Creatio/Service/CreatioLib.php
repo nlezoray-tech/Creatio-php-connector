@@ -567,7 +567,29 @@ abstract class CreatioLib
         }
 
         return '';
-    }
+    }    
+
+    /**
+     * Return $nbresults contacts
+     *
+     * @param string $nbresults Nb results to get
+     * @return array|string Data table or empty string if not found
+     */
+    public function getContacts($nbresults)
+    {
+        $apiQuery = [
+            '$select' => 'Id,Name,AccountId,Phone,MobilePhone,Email,Surname,GivenName,MiddleName'
+        ];
+
+        $results = json_decode($this->adapter->get('ContactCollection', $apiQuery, $nbresults), true);
+        //echo "<xmp>".print_r($results,1)."</xmp>";exit();
+        
+        if (!empty($results['d']['results'])) {
+            return $results['d']['results'];
+        }
+
+        return '';
+    }    
 
     /**
      * Initialise un contact à partir de son ID.
