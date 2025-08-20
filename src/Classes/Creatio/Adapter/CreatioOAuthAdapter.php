@@ -16,7 +16,6 @@ namespace Nlezoray\Creatio\Adapter;
 
 use GuzzleHttp\Client;
 use Nlezoray\Creatio\Adapter\CreatioAdapterInterface;
-use Nlezoray\Creatio\Logger\CreatioLogger;
 
 class CreatioOAuthAdapter implements CreatioAdapterInterface
 {
@@ -32,7 +31,6 @@ class CreatioOAuthAdapter implements CreatioAdapterInterface
 
     public function __construct(string $env = 'prod')
     {
-        $this->logger = new CreatioLogger('C:\\workspace\\api\\var\\logs\\Creatio-OAuth.log');
         switch ($env) {
             case 'dev':
                 $this->urlapi = 'https://dev-yoursite.creatio.com';
@@ -52,14 +50,12 @@ class CreatioOAuthAdapter implements CreatioAdapterInterface
 
     public function authentification(): ?bool
     {
-        //$this->logger->log("Démarrage authentification OAuth...");
         if ($this->tokenData !== null && $this->tokenTimestamp !== null) {
             if (time() < $this->tokenTimestamp + $this->tokenTTL - 30) {
                 return true;
             }
         }
 
-        //$this->logger->log("Génération du token oAuth.");
         $tokenResponse = $this->generateCreatioToken();
 
         if (isset($tokenResponse->access_token)) {

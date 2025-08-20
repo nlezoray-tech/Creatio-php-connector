@@ -14,8 +14,6 @@
  */
 namespace Nlezoray\Creatio\Adapter;
 
-use Nlezoray\Creatio\Logger\CreatioLogger;
-
 class CreatioODataAdapter implements CreatioAdapterInterface
 {
     protected $urlapi;
@@ -29,7 +27,6 @@ class CreatioODataAdapter implements CreatioAdapterInterface
 
     public function __construct(string $env = 'prod')
     {
-        $this->logger = new CreatioLogger('C:\\workspace\\api\\var\\logs\\Creatio-oData.log');
         $this->logPath = 'C:\\workspace\\api\\var\\logs\\BPMInt.log';
         $this->cookiePath = 'C:\\Users\\Public\\cookieBPM.txt';
         $this->tokenSecret = 'TOKENSECRET';
@@ -46,7 +43,6 @@ class CreatioODataAdapter implements CreatioAdapterInterface
 
     public function authentification(): ?bool
     {
-        $this->logger->log(date('Y-m-d H:i:s') . "Démarrage authentification oData...");
         $targetUrl = $this->urlapi . '/ServiceModel/AuthService.svc/Login';
         $post = [
             'UserName' => 'UserName',

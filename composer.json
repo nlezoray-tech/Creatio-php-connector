@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Nlezoray\\Creatio\\": "src/Creatio/"
+      "Nlezoray\\Creatio\\": "src/Classes/Creatio/"
     }
   },
   "require-dev": {
